@@ -91,7 +91,7 @@ const App: React.FC = () => {
 
       <footer className="border-t border-slate-200 dark:border-slate-900 py-12 text-center text-slate-500 text-sm">
         <p>© {new Date().getFullYear()} Tacite Wakilongo. All rights reserved.</p>
-        <p className="mt-2 font-mono">Built with React, Tailwind & Gemini</p>
+        <p className="mt-2 font-mono">Built with React & Tailwind</p>
       </footer>
     </div>
   );
