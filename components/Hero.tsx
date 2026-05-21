@@ -15,12 +15,15 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
   const slogan = t.hero.slogan;
   const presentation = (t.hero as any).presentation || "";
 
-  // Séparer le nom pour l'animer mot par mot
+  // Liens de téléchargement direct Google Drive en fonction de la langue active
+  const cvDownloadLink = locale === 'fr'
+    ? 'https://docs.google.com/uc?export=download&id=1oSrfXHxzwGQPKzcoVCApSi-kRlt7W0ge'
+    : 'https://docs.google.com/uc?export=download&id=1QSTtleGcf-yi46mFPccdeI3znYyiD3w3';
+
   const nameParts = name.split(' ');
   const firstName = nameParts[0];
   const lastName = nameParts.slice(1).join(' ');
 
-  // Conteneur d'orchestration (Stagger)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,7 +35,6 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
     },
   };
 
-  // Animation pour le badge
   const badgeVariants = {
     hidden: { opacity: 0, scale: 0.9, y: -10 },
     visible: {
@@ -43,19 +45,17 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
     }
   };
 
-  // Animation de découpe (mask slide-up) pour le nom
   const wordMaskVariants = {
     hidden: { y: '120%' },
     visible: {
       y: 0,
       transition: {
-        ease: [0.16, 1, 0.3, 1], // courbe de bézier "expoOut" très fluide
+        ease: [0.16, 1, 0.3, 1],
         duration: 0.9,
       }
     }
   };
 
-  // Animation cinématographique pour le rôle (Lettre par lettre / Expansion)
   const roleVariants = {
     hidden: { opacity: 0, letterSpacing: '-0.02em', filter: 'blur(3px)' },
     visible: {
@@ -66,7 +66,6 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
     }
   };
 
-  // Révélation douce et floutée pour les paragraphes
   const textBlurVariants = {
     hidden: { opacity: 0, y: 15, filter: 'blur(4px)' },
     visible: {
@@ -77,7 +76,6 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
     }
   };
 
-  // Boutons et réseaux sociaux
   const actionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -113,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
           </span>
         </motion.div>
         
-        {/* Titre avec effet de découpe/slide-up 3D */}
+        {/* Titre */}
         <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] flex flex-wrap justify-center lg:justify-start">
           <span className="relative overflow-hidden inline-block py-1 pr-3">
             <motion.span 
@@ -133,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
           </span>
         </h1>
         
-        {/* Rôle avec expansion fluide */}
+        {/* Rôle */}
         <motion.h2 
           variants={roleVariants}
           className="text-2xl lg:text-3xl font-semibold text-slate-600 dark:text-slate-400 font-mono tracking-tight"
@@ -141,7 +139,7 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
           {role}
         </motion.h2>
         
-        {/* Phrase d'accroche floutée */}
+        {/* Phrase d'accroche */}
         <motion.p 
           variants={textBlurVariants}
           className="text-lg text-slate-700 dark:text-slate-300 max-w-xl font-medium leading-relaxed mx-auto lg:mx-0"
@@ -149,7 +147,7 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
           {slogan}
         </motion.p>
 
-        {/* Présentation complémentaire floutée */}
+        {/* Présentation complémentaire */}
         {presentation && (
           <motion.p 
             variants={textBlurVariants}
@@ -173,10 +171,11 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
 
-          {/* Bouton Téléchargement CV */}
+          {/* Bouton Téléchargement Direct de CV */}
           <a 
-            href="/cv-tacite-wakilongo.pdf" 
-            download="CV_Tacite_Wakilongo.pdf"
+            href={cvDownloadLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group w-full sm:w-auto flex items-center justify-center space-x-2 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 bg-slate-100/50 dark:bg-slate-900/50 hover:bg-slate-200 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300 px-6 py-3.5 rounded-xl font-bold transition-all shadow-sm active:scale-95"
           >
             <Download className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" />
