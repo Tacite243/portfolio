@@ -119,7 +119,30 @@ export const translations: Record<'fr' | 'en', any> = {
       ]
     },
     education: {
-      title: "Formation",
+      title: "Parcours de Formation",
+      items: [
+        {
+          institution: 'Afrix Global',
+          degree: 'Développement Web Fullstack',
+          detail: 'Bourse d\'excellence Digital Africa',
+          year: 'Août 2025 - Fév 2026',
+          location: 'Goma, DRC'
+        },
+        {
+          institution: 'KADEA ACADEMY',
+          degree: 'Bac +2 en développement web & mobile',
+          detail: 'Formation certifiante et intensive',
+          year: '2023 - 2024',
+          location: 'Goma, DRC'
+        },
+        {
+          institution: 'ULPGL',
+          degree: 'Génie informatique',
+          detail: 'Parcours universitaire technique',
+          year: '2020 - 2023',
+          location: 'Goma, DRC'
+        }
+      ]
     },
     contact: {
       title: "Contact",
@@ -247,7 +270,30 @@ export const translations: Record<'fr' | 'en', any> = {
       ]
     },
     education: {
-      title: "Education",
+      title: "Educational Journey",
+      items: [
+        {
+          institution: 'Afrix Global',
+          degree: 'Fullstack Web Development',
+          detail: 'Digital Africa Excellence Scholarship',
+          year: 'Aug 2025 - Feb 2026',
+          location: 'Goma, DRC'
+        },
+        {
+          institution: 'KADEA ACADEMY',
+          degree: 'Associate Degree in Web & Mobile Development',
+          detail: 'Intensive certification program',
+          year: '2023 - 2024',
+          location: 'Goma, DRC'
+        },
+        {
+          institution: 'ULPGL',
+          degree: 'Computer Engineering',
+          detail: 'Technical university curriculum',
+          year: '2020 - 2023',
+          location: 'Goma, DRC'
+        }
+      ]
     },
     contact: {
       title: "Contact",
