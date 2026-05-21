@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Translation, Locale } from '../types';
 import { motion } from 'framer-motion';
-import { User, Code2, Zap } from 'lucide-react';
+import { Code2, Zap } from 'lucide-react';
 
 interface AboutProps {
   locale: Locale;
@@ -13,8 +12,8 @@ const About: React.FC<AboutProps> = ({ t }) => {
   return (
     <div className="space-y-12">
       <div className="flex items-center space-x-4">
-        <h2 className="text-3xl font-bold">{t.about.title}</h2>
-        <div className="h-[1px] flex-1 bg-slate-800" />
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t.about.title}</h2>
+        <div className="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -24,20 +23,20 @@ const About: React.FC<AboutProps> = ({ t }) => {
           viewport={{ once: true }}
           className="lg:col-span-7 space-y-6"
         >
-          <p className="text-lg text-slate-400 leading-relaxed">
+          <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             {t.about.description}
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30 transition-colors group">
-              <Zap className="w-8 h-8 text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-bold text-slate-200">Efficient</h3>
-              <p className="text-sm text-slate-400">Optimizing performance is my priority.</p>
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 transition-colors group">
+              <Zap className="w-8 h-8 text-emerald-600 dark:text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-bold text-slate-800 dark:text-slate-200">Efficient</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Optimizing performance is my priority.</p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30 transition-colors group">
-              <Code2 className="w-8 h-8 text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-bold text-slate-200">Modern Stack</h3>
-              <p className="text-sm text-slate-400">Using the latest tech for best UX.</p>
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/30 transition-colors group">
+              <Code2 className="w-8 h-8 text-emerald-600 dark:text-emerald-500 mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-bold text-slate-800 dark:text-slate-200">Modern Stack</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Using the latest tech for best UX.</p>
             </div>
           </div>
         </motion.div>
@@ -48,7 +47,8 @@ const About: React.FC<AboutProps> = ({ t }) => {
           viewport={{ once: true }}
           className="lg:col-span-5 relative"
         >
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 font-mono text-sm space-y-4 shadow-2xl overflow-hidden">
+          {/* Le terminal conserve un aspect sombre hautement contrasté pour l'esthétique du code */}
+          <div className="bg-slate-950 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 font-mono text-sm space-y-4 shadow-2xl overflow-hidden text-slate-300">
             <div className="flex space-x-2 border-b border-slate-800 pb-4 mb-4">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />

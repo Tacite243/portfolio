@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Locale, Translation } from '../types';
 import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
@@ -53,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, toggleLocale, t, theme, toggleT
               className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-400 transition-colors"
               title="Toggle Theme"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {theme === 'dark' ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-indigo-600" />}
             </button>
             <button 
               onClick={toggleLocale}
@@ -70,14 +69,16 @@ const Navbar: React.FC<NavbarProps> = ({ locale, toggleLocale, t, theme, toggleT
           <button 
             onClick={toggleTheme}
             className="p-2 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400"
+            title="Toggle Theme"
           >
-            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4 text-indigo-500" />}
           </button>
           <button 
             onClick={toggleLocale}
-            className="p-2 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400"
+            className="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-xs font-bold text-slate-600 dark:text-slate-400"
           >
             <Globe className="w-4 h-4" />
+            <span className="text-[10px] ml-0.5">{locale.toUpperCase()}</span>
           </button>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-slate-600 dark:text-slate-400">
             {isMobileMenuOpen ? <X /> : <Menu />}
