@@ -195,7 +195,7 @@ const Hero: React.FC<HeroProps> = ({ locale, t }) => {
             </a>
 
             <a 
-              href="https://www.linkedin.com/in/tacite-wakilongo-571216262/" 
+              href="https://www.linkedin.com/in/tacite-wakilongo" 
               target="_blank"
               rel="noopener noreferrer"
               className="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hover:border-indigo-500/20 dark:hover:border-indigo-500/20 transition-all text-blue-600 dark:text-blue-400 hover:scale-105 active:scale-95 shadow-sm"
